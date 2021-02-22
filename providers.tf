@@ -11,20 +11,8 @@ terraform {
   }
   }
 
-resource "aws_vpc" "my_vpc" {
-  cidr_block       = "${var.vpc_cidr}"
-  instance_tenancy = "default"
-
-  tags = {
-    Name = "javahomevpc"
-    Environment = "Dev"
-    Location = "India" 
-  }
+# output "vpc_cidr" {
+#   value = "${aws_vpc.my_vpc.cidr_block}"  
   
-}
-
-output "vpc_cidr" {
-    value = "${aws_vpc.my_vpc.cidr_block}"  
-  
-}
+# }
 
